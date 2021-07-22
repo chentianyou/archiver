@@ -53,6 +53,11 @@ func (tgz *TarGz) Unarchive(source, destination string) error {
 	return tgz.Tar.Unarchive(source, destination)
 }
 
+func (tgz *TarGz) UnarchiveFrom(file io.Reader, destination string) error {
+	tgz.wrapReader()
+	return tgz.Tar.UnarchiveFrom(file, destination)
+}
+
 // Walk calls walkFn for each visited item in archive.
 func (tgz *TarGz) Walk(archive string, walkFn WalkFunc) error {
 	tgz.wrapReader()

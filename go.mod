@@ -1,4 +1,4 @@
-module github.com/mholt/archiver/v3
+module github.com/chentianyou/archiver
 
 go 1.13
 
